@@ -90,20 +90,38 @@ removeDuplicates('google all that you think can think of');
 
 function palindrome(str) {
   let map = new Map();
-  let newString = str + str;
-  let string = '';
-  let solution;
-  for (let i = 0; i < newString.length; i++) {
-   
-    console.log(map);
-    string += newString[i];
-    solution = string.split('').reverse().join('');
-    map.set(solution);
+  let unmatched = false;
+  for (let i = 0; i < str.length; i++) {
+    let char = str[i];
+    if (map.has(char)) {
+      let value = map.get(char);
+      map.set(char, value + 1);
+    } else {
+      map.set(char, 1);
+    }
   }
-  console.log(map);
-  
-  return (solution).indexOf(str) != -1;
+  for( let value of map.values()){
+    if( value % 2 === 1  ){
+      if(unmatched){
+        return false;
+      }else{
+        unmatched = true;
+      }
+    }
+  }
+  return true;
 }
-console.log(palindrome('racecar'));
+console.log(palindrome('north'));
 
+function removeDuplicates2(str) {
+  const stringHolder = new Map();
+  let result = '';
+  str.split('').forEach(letter => {
+    if (!stringHolder.has(letter)) {
+      stringHolder.set(letter, '');
+      result += letter;
+    }
+  });
+  return result;
+}
 
