@@ -68,4 +68,18 @@ console.log(12 % 9);     [19]                       [33]
 console.log(17 % 9);     [10]
 console.log(10 % 9);
 
-//4
+//4 Remove duplicates
+
+function removeDuplicates(str){
+  let map = new HashMap();
+  let newStr = '';
+
+  for(let i  = 0; i < str.length; i++){
+    map.set(str[i]);
+  }
+  
+  return map;
+}
+
+
+console.log(removeDuplicates('google'));
