@@ -2,7 +2,7 @@
 
 const HashMap = require('./hash-map-practice');
 
-function main(){
+function main() {
   const lor = new HashMap();
 
   lor.MAX_LOAD_RATIO = 0.5;
@@ -20,8 +20,8 @@ function main(){
   lor.set('HalfElven', 'Arwen');
   lor.set('Ent', 'Treebeard');
 
-  console.log(lor.get('Hobbit')); // Frodo, the first Hobbit and Maiar get written over because they have the same key.
-  console.log(lor.get('Maiar')); // Sauron,
+  // console.log(lor.get('Hobbit')); // Frodo, the first Hobbit and Maiar get written over because they have the same key.
+  // console.log(lor.get('Maiar')); // Sauron,
 
   return lor;
 }
@@ -45,8 +45,8 @@ const WhatDoesThisDo = function () {
   map2.set(str3, 20);
   map2.set(str4, 10);
 
-  console.log(map1.get(str1));
-  console.log(map2.get(str3));
+  // console.log(map1.get(str1));
+  // console.log(map2.get(str3));
 };
 
 // console.log(WhatDoesThisDo());
@@ -62,24 +62,54 @@ const WhatDoesThisDo = function () {
 // 2) Show your hash map after the insertion of the keys 5, 28, 19, 15, 20, 33, 12, 17, 10 
 // into the hash map with collisions resolved by separate chaining.Let the hash table have a length m = 9, 
 // and let the hash function be k mod m.
-console.log(20% 9);
-console.log(33 % 9);[[], [28], [20], [12], [], [5], [15], [], [17], [],];
-console.log(12 % 9);     [19]                       [33]
-console.log(17 % 9);     [10]
-console.log(10 % 9);
+// console.log(20% 9);
+// console.log(33 % 9);[[], [28], [20], [12], [], [5], [15], [], [17], [],];
+// console.log(12 % 9);     [19]                       [33]
+// console.log(17 % 9);     [10]
+// console.log(10 % 9);
 
 //4 Remove duplicates
 
-function removeDuplicates(str){
-  let map = new HashMap();
+function removeDuplicates(str) {
+  let map = new Map();
   let newStr = '';
 
-  for(let i  = 0; i < str.length; i++){
+  for (let i = 0; i < str.length; i++) {
     map.set(str[i]);
   }
-  
+  for (let key of map.keys()) {
+    newStr += key;
+  }
+  return newStr;
+}
+
+removeDuplicates('google all that you think can think of');
+
+
+//5. Any permutation a palindrom 
+
+function palendromafied(str) {
+  let map = new Map();
+  let str1 = '';
+  let str2 = '';
+
+
+  for (let i = 0; i < str.length; i++) {
+    str1 += str[i];
+    map.set(str1);
+    for (let j = 0; j < str.length; j++) {
+      str2 += ` ${str[j]}`;
+    }
+  }
+  // for (let key of map.keys()) {
+  //   str2 += key;
+  // }
+  console.log(str1);
+  console.log(str2);
+  // if((str1 + str2).indexOf(str1) ! = -1){
+
+  // }
   return map;
 }
 
-
-console.log(removeDuplicates('google'));
+console.log(palendromafied('acecarr'));
