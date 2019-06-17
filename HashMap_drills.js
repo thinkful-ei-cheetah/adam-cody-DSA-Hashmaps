@@ -125,3 +125,34 @@ function removeDuplicates2(str) {
   return result;
 }
 
+// 6. Anagrams
+
+function anagramGroup(words){
+  let map = new Map();
+  let values = '';
+  let newArr = [];
+
+  for(let i = 0; i < words.length; i++){
+    let char = words[i].split('').sort((a,b) => {
+      return a>b;
+    }).join('');
+
+    values = words[i];
+    map.set(char);
+  }
+  
+  // for(let i = 0; i < words.length; i++){
+  //   let key = map.keys();
+  //   console.log(key);
+  //   let curVal = values.split('').sort((a,b) => {
+  //     return a>b;
+  //   }).join('');
+
+  //   if(key === curVal){
+  //     newArr.push(curVal);
+  //   }
+  // }
+  return newArr;
+}
+
+console.log(anagramGroup(['east', 'cars', 'acre', 'arcs', 'teas', 'eats', 'race']));
