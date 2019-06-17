@@ -69,7 +69,7 @@ class HashMap {
       }
     }
   }
-  
+
   static _hashString(string){
     let hash = 5381;
     for(let i = 0; i<string.length; i++){
@@ -82,3 +82,5 @@ class HashMap {
 
 HashMap.MAX_LOAD_RATIO = 0.9;
 HashMap.SIZE_RATIO = 3;
+
+module.exports = HashMap;
