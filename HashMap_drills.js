@@ -88,28 +88,22 @@ removeDuplicates('google all that you think can think of');
 
 //5. Any permutation a palindrom 
 
-function palendromafied(str) {
+function palindrome(str) {
   let map = new Map();
-  let str1 = '';
-  let str2 = '';
-
-
-  for (let i = 0; i < str.length; i++) {
-    str1 += str[i];
-    map.set(str1);
-    for (let j = 0; j < str.length; j++) {
-      str2 += ` ${str[j]}`;
-    }
+  let newString = str + str;
+  let string = '';
+  let solution;
+  for (let i = 0; i < newString.length; i++) {
+   
+    console.log(map);
+    string += newString[i];
+    solution = string.split('').reverse().join('');
+    map.set(solution);
   }
-  // for (let key of map.keys()) {
-  //   str2 += key;
-  // }
-  console.log(str1);
-  console.log(str2);
-  // if((str1 + str2).indexOf(str1) ! = -1){
-
-  // }
-  return map;
+  console.log(map);
+  
+  return (solution).indexOf(str) != -1;
 }
+console.log(palindrome('racecar'));
 
-console.log(palendromafied('acecarr'));
+
