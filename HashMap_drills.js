@@ -20,7 +20,7 @@ function main(){
   lor.set('HalfElven', 'Arwen');
   lor.set('Ent', 'Treebeard');
 
-  console.log(lor.get('Hobbit')); // Frodo, the first Hobbit and mair get written over because they have the same key.
+  console.log(lor.get('Hobbit')); // Frodo, the first Hobbit and Maiar get written over because they have the same key.
   console.log(lor.get('Maiar')); // Sauron,
 
   return lor;
