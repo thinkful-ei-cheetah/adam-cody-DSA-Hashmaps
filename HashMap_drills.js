@@ -51,3 +51,21 @@ const WhatDoesThisDo = function () {
 
 // console.log(WhatDoesThisDo());
 
+// 3 
+
+
+// 1) Show your hash map after the insertion of keys 10, 22, 31, 4, 15, 28, 17, 88, 59 into a hash map of 
+// length m = 11 using open addressing and a hash function k mod m.
+[[22], [88], [], [], [4], [15], [28], [17], [59], [31], [10], []];
+
+// capacity = 24  
+// 2) Show your hash map after the insertion of the keys 5, 28, 19, 15, 20, 33, 12, 17, 10 
+// into the hash map with collisions resolved by separate chaining.Let the hash table have a length m = 9, 
+// and let the hash function be k mod m.
+console.log(20% 9);
+console.log(33 % 9);[[], [28], [20], [12], [], [5], [15], [], [17], [],];
+console.log(12 % 9);     [19]                       [33]
+console.log(17 % 9);     [10]
+console.log(10 % 9);
+
+//4
